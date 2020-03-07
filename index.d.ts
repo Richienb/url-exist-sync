@@ -1,14 +1,20 @@
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * Synchronously check if a URL exists.
+ * @param url The URL to check.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const urlExistSync = require("url-exist");
+ *
+ * urlExistSync("https://google.com");
+ * //=> true
+ *
+ * urlExistSync("https://google.com/404ingURL");
+ * //=> false
+ *
+ * urlExistSync("notaurl");
+ * //=> false
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function urlExistSync(url: string): boolean
 
-export = theModule;
+export = urlExistSync

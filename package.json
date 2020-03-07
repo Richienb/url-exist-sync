@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "url-exist-sync",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Synchronously check if a URL exists.",
+	"repository": "https://github.com/Richienb/url-exist-sync.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,8 +17,18 @@
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"url",
+		"exists",
+		"sync",
+		"synchronous",
+		"check",
+		"validation"
+	],
+	"dependencies": {
+		"is-url-superb": "^3.0.0",
+		"sync-request": "^6.1.0"
+	},
 	"devDependencies": {
 		"ava": "^3.5.0",
 		"eslint-config-richienb": "^0.3.0",

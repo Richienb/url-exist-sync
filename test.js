@@ -1,13 +1,14 @@
 const test = require("ava")
-const theModule = require(".")
+const urlExistSync = require(".")
 
 test("main", (t) => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number",
-	})
+	t.true(urlExistSync("https://httpbin.org/status/200"))
 
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+	t.true(urlExistSync("https://httpbin.org/status/301"))
+
+	t.false(urlExistSync("https://httpbin.org/status/404"))
+
+	t.false(urlExistSync("notaurl"))
+
+	t.false(urlExistSync("https://aurlthatprobablydoesnotexist.co"))
 })

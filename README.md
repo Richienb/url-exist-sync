@@ -1,41 +1,44 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# URL Exists Sync [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/url-exist-sync/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/url-exist-sync)
 
-My awesome module.
+Synchronously check if a URL exists.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/url-exist-sync.png)](https://npmjs.com/package/url-exist-sync)
+
+## Use asynchronously
+
+If you are able to run this in an asynchronous context, I highly recommended that you do so with [`url-exist`](https://github.com/Richienb/url-exist) since synchronous web requests can hang/freeze clients.
 
 ## Install
 
 ```sh
-npm install the-module
+npm install url-exist-sync
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const urlExistSync = require("url-exist");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+urlExistSync("https://google.com");
+//=> true
+
+urlExistSync("https://google.com/404ingURL");
+//=> false
+
+urlExistSync("notaurl");
+//=> false
 ```
 
 ## API
 
-### theModule(input, options?)
+### urlExistSync(url)
 
-#### input
+#### url
 
 Type: `string`
 
-Lorem ipsum.
+The URL to check.
 
-#### options
+## Related
 
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+- [url-exist](https://github.com/Richienb/url-exist) - The asynchronous version.
