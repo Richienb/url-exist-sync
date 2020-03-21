@@ -1,13 +1,15 @@
 "use strict"
 
 const isUrl = require("is-url-superb")
-const request = require("sync-request")
+const retus = require("retus").create({
+	throwHttpErrors: false,
+})
 
 module.exports = (url) => {
 	if (!isUrl(url)) return false
 	try {
-		const res = request("HEAD", url)
-		return !/4\d\d/.test(res.statusCode)
+		const { statusCode } = retus.head(url)
+		return !/4\d\d/.test(statusCode)
 	} catch (_) {
 		return false
 	}

@@ -27,7 +27,7 @@
 	],
 	"dependencies": {
 		"is-url-superb": "^3.0.0",
-		"sync-request": "^6.1.0"
+		"retus": "^1.1.1"
 	},
 	"devDependencies": {
 		"ava": "^3.5.0",
