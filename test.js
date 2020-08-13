@@ -4,7 +4,7 @@ const urlExistSync = require(".")
 test("main", (t) => {
 	t.true(urlExistSync("https://httpbin.org/status/200"))
 
-	t.true(urlExistSync("https://httpbin.org/status/301"))
+	t.true(urlExistSync("https://httpbin.org/status/300"))
 
 	t.false(urlExistSync("https://httpbin.org/status/404"))
 
