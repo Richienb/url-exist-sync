@@ -1,7 +1,7 @@
 const test = require("ava")
 const urlExistSync = require(".")
 
-test("main", (t) => {
+test("main", t => {
 	t.true(urlExistSync("https://httpbin.org/status/200"))
 
 	t.true(urlExistSync("https://httpbin.org/status/300"))

@@ -2,11 +2,14 @@
 
 const isUrl = require("is-url-superb")
 const retus = require("retus").create({
-	throwHttpErrors: false,
+	throwHttpErrors: false
 })
 
-module.exports = (url) => {
-	if (!isUrl(url)) return false
+module.exports = url => {
+	if (!isUrl(url)) {
+		return false
+	}
+
 	try {
 		const { statusCode } = retus.head(url)
 		return !/4\d\d/.test(statusCode)
