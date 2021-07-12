@@ -17,15 +17,15 @@ npm install url-exist-sync
 ## Usage
 
 ```js
-const urlExistSync = require("url-exist-sync");
+import urlExistSync from "url-exist-sync"
 
-urlExistSync("https://google.com");
+urlExistSync("https://google.com")
 //=> true
 
-urlExistSync("https://google.com/404ingURL");
+urlExistSync("https://google.com/404ingURL")
 //=> false
 
-urlExistSync("notaurl");
+urlExistSync("notaurl")
 //=> false
 ```
 

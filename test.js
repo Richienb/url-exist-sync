@@ -1,5 +1,5 @@
-const test = require("ava")
-const urlExistSync = require(".")
+import test from "ava"
+import urlExistSync from "./index.js"
 
 test("main", t => {
 	t.true(urlExistSync("https://httpbin.org/status/200"))

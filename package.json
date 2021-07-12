@@ -5,17 +5,18 @@
 	"repository": "https://github.com/Richienb/url-exist-sync.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
-	"main": "index.js",
+	"type": "module",
+	"exports": "./index.js",
 	"files": [
 		"index.js",
 		"index.d.ts"
 	],
 	"engines": {
-		"node": ">=10"
+		"node": ">=12.20"
 	},
 	"scripts": {
 		"lint": "xo",
-		"test": "yarn lint && ava"
+		"test": "xo && ava && tsd"
 	},
 	"keywords": [
 		"url",
@@ -26,13 +27,14 @@
 		"validation"
 	],
 	"dependencies": {
-		"is-url-superb": "^3.0.0",
-		"retus": "^1.1.1"
+		"is-url-superb": "^6.0.0",
+		"retus": "^1.1.2"
 	},
 	"devDependencies": {
-		"ava": "^3.11.1",
-		"eslint-config-richienb": "^0.4.2",
-		"xo": "^0.33.0"
+		"ava": "^3.15.0",
+		"eslint-config-richienb": "^0.6.2",
+		"tsd": "^0.17.0",
+		"xo": "^0.41.0"
 	},
 	"xo": {
 		"extends": "richienb"

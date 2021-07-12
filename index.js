@@ -1,19 +1,17 @@
-"use strict"
+import isUrl from "is-url-superb"
+import retus from "retus"
 
-const isUrl = require("is-url-superb")
-const retus = require("retus").create({
-	throwHttpErrors: false
-})
-
-module.exports = url => {
+export default function urlExistSync(url) {
 	if (!isUrl(url)) {
 		return false
 	}
 
 	try {
-		const { statusCode } = retus.head(url)
+		const { statusCode } = retus.head(url, {
+			throwHttpErrors: false,
+		})
 		return !/4\d\d/.test(statusCode)
-	} catch (_) {
+	} catch {
 		return false
 	}
 }
